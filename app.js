@@ -162,7 +162,7 @@ function pragatiShippingRatesOptionChange(radioButton) {
 document.addEventListener("DOMContentLoaded", async function () {
 
 
-	if (!window.location.pathname.includes("/products")) {
+	if (!window.location.pathname.includes("/product-page")) {
 		throw new Error("This is not a product page.");
 	}
 
