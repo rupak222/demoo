@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 	if (window.Pragati.common.metafield.visibility_page.hidden_add_to_cart) {
 		// hiding atc button
 		const getATCButton = document.querySelector(
-			'button[type="submit"][name="add"]',
+			'button[data-hook="add-to-cart"]',
 		);
 		if (getATCButton) {
 			getATCButton.style.display = "none"; // remember !important rule don't work in javscript, if want use css.
