@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 	if (window.Pragati.common.metafield.visibility_page.hidden_buy_now) {
 		// hiding buyitnow button
-		const getBINButton = document.querySelector(".shopify-payment-button");
+		const getBINButton = document.querySelector('button[data-hook="buy-now-button"]');
 		if (getBINButton) {
 			getBINButton.style.display = "none";
 		} else {
@@ -496,13 +496,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 	// Add the button to the DOM
 	// document.body.appendChild(button);
-	const parent = document.querySelector(".shopify-payment-button");
+	const parent = document.querySelector('button[data-hook="buy-now-button"]');
 	if (parent) {
 		// Insert the new element before the existing element
 		parent.parentNode.insertBefore(button, parent);
 	} else {
 		// If the initial selector doesn't exist, try alternative selectors
-		const alternativeSelectors = ['button[type="submit"][name="add"]'];
+		const alternativeSelectors = ['button[data-hook="add-to-cart"]'];
 		for (const selector of alternativeSelectors) {
 			let parent = document.querySelector(selector);
 			if (parent) {
@@ -643,7 +643,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 		console.log("90");
 
-		let quantityInput = document.querySelector(".quantity__input");
+		let quantityInput = document.querySelector('input[data-hook="number-input-spinner-input"]');
 		if (quantityInput) {
 			orderInfo.quantity = quantityInput.value;
 			console.log(quantityInput.value);
