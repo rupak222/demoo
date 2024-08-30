@@ -160,24 +160,11 @@ function pragatiShippingRatesOptionChange(radioButton) {
 }
 
 
-const targetNode = document.querySelector('nav[data-hook="navigation"]');
-const config = { childList: true, subtree: true, characterData: true };
-
-const observer = new MutationObserver((mutationsList) => {
-    for(const mutation of mutationsList) {
-        if (mutation.type === 'childList' || mutation.type === 'characterData') {
-            console.log('Content changed!');
-            // Handle the content change
-        }
-    }
-});
-
-observer.observe(targetNode, config);
-
-
 document.addEventListener("DOMContentLoaded", async function () {
 
+	await new Promise(r => setTimeout(r, 10000));
 
+	
 	if (!window.location.pathname.includes("/product-page")) {
 		throw new Error("This is not a product page.");
 	}
