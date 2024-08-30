@@ -162,7 +162,7 @@ function pragatiShippingRatesOptionChange(radioButton) {
 
 document.addEventListener("DOMContentLoaded", async function () {
 
-	await new Promise(r => setTimeout(r, 3000));
+	await new Promise(r => setTimeout(r, 10000));
 
 	
 	if (!window.location.pathname.includes("/product-page")) {
